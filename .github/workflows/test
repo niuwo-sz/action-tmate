@@ -1,9 +1,10 @@
-name: CI
-on: [push]
+name: Ubuntu
+on:
+  watch:
+    types: started
 jobs:
-  build:
+  Ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v1
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
